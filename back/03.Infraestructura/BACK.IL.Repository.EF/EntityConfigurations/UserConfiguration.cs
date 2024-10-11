@@ -49,11 +49,6 @@ namespace BACK.IL.Repository.EF.EntityConfigurations
             builder.Property(e => e.Gender)
                 .HasMaxLength(1);
 
-            builder.Property(e => e.Avatar);
-
-            builder.Property(e => e.Points)
-                .HasDefaultValue(0);
-
             builder.Property(e => e.CreateDate)
                 .IsRequired()
                 .HasColumnType("datetime");

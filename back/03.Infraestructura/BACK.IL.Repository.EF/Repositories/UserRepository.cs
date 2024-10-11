@@ -32,8 +32,6 @@ namespace BACK.IL.Repository.EF.Repositories
                     BirthDate = e.BirthDate,
                     ID = e.ID,
                     Gender = e.Gender,
-                    Avatar = e.Avatar,
-                    Points = e.Points,
                     CreateDate = e.CreateDate,
 
                     Role = new RoleLoginQuery()

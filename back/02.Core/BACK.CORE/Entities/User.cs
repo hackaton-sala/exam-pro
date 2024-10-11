@@ -17,8 +17,6 @@ namespace BACK.CORE.Entities
         public DateTime? BirthDate { get; set; }
         public string? ID { get; set; }
         public string? Gender { get; set; }
-        public string? Avatar { get; set; }
-        public int Points { get; set; }
         public DateTime CreateDate { get; set; }
 
         public Guid RoleId { get; set; }
