@@ -16,9 +16,6 @@ namespace BACK.IL.Repository.EF.EntityConfigurations
             builder.ToTable("Roles");
             builder.HasKey(r => r.RoleId);
 
-            builder.Property(r => r.RoleId)
-                .ValueGeneratedOnAdd()
-                .HasDefaultValueSql("NewId()");
 
             builder.Property(r => r.RoleName)
                 .IsRequired()

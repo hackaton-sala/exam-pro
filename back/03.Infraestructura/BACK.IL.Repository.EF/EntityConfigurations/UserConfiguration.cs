@@ -17,10 +17,6 @@ namespace BACK.IL.Repository.EF.EntityConfigurations
 
             builder.HasKey(e => e.UserId);
 
-            builder.Property(e => e.UserId)
-                .ValueGeneratedOnAdd()
-                .HasDefaultValueSql("NewId()");
-
             builder.Property(e => e.Name)
                 .IsRequired()
                 .HasMaxLength(50);
@@ -51,7 +47,7 @@ namespace BACK.IL.Repository.EF.EntityConfigurations
 
             builder.Property(e => e.CreateDate)
                 .IsRequired()
-                .HasColumnType("datetime");
+                .HasColumnType("timestamptz");
 
             // Propiedades Navegacion
         }
