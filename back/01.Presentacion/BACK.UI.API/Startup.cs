@@ -45,7 +45,7 @@ namespace BACK.UI.API
             // Add SignalR
             services.AddSignalR();
 
-            services.AddDbContext<Context>(opt => opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<Context>(opt => opt.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
 
             // Automapper
             var mapperAssembly = Assembly.Load(new AssemblyName("BACK.IL.Mapper.AM"));
