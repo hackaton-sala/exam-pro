@@ -34,9 +34,9 @@ namespace BACK.UI.Controllers
 
         // GET /api/roles/{roleId}
         [HttpGet("/api/roles/{roleId}")]
-        public IActionResult Get([FromRoute] string roleId)
+        public IActionResult Get([FromRoute] int roleId)
         {
-            Role role = _service.RoleService.Get(new Guid(roleId));
+            Role role = _service.RoleService.Get(roleId);
             if (role == null) return NotFound();
 
             RoleResource roleResource = _mapper.Map<RoleResource>(role);
@@ -55,11 +55,11 @@ namespace BACK.UI.Controllers
 
         // PUT /api/roles/{roleId}
         [HttpPut("/api/roles/{roleId}")]
-        public IActionResult Put([FromRoute] string roleId, [FromBody] RoleResource RoleResource)
+        public IActionResult Put([FromRoute] int roleId, [FromBody] RoleResource RoleResource)
         {
             if (RoleResource == null) return BadRequest();
 
-            Role roleOld = _service.RoleService.Get(new Guid(roleId));
+            Role roleOld = _service.RoleService.Get(roleId);
             if (roleOld == null) return NotFound();
 
             _service.RoleService.Update(roleOld, _mapper.Map<Role>(RoleResource));
@@ -68,9 +68,9 @@ namespace BACK.UI.Controllers
 
         // DELETE /api/roles/{roleId}
         [HttpDelete("/api/roles/{roleId}")]
-        public IActionResult Delete([FromRoute] string roleId)
+        public IActionResult Delete([FromRoute] int roleId)
         {
-            Role role = _service.RoleService.Get(new Guid(roleId));
+            Role role = _service.RoleService.Get(roleId);
             if (role == null) return NotFound();
 
             _service.RoleService.Delete(role);

@@ -18,7 +18,7 @@ namespace BACK.IL.Repository.EF.Repositories
         {
             get { return Context as Context; }
         }
-        public LoginQuery GetUserFull(Guid UserId)
+        public LoginQuery GetUserFull(int UserId)
         {
             var a = Context.Users
                 .Where(e => e.UserId == UserId)

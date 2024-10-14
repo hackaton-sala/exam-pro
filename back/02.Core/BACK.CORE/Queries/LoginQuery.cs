@@ -8,7 +8,7 @@ namespace BACK.CORE.Queries
 {
     public class LoginQuery
     {
-        public Guid UserId { get; set; }
+        public int UserId { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
@@ -24,7 +24,7 @@ namespace BACK.CORE.Queries
 
     public class RoleLoginQuery
     {
-        public Guid RoleId { get; set; }
+        public int RoleId { get; set; }
         public string RoleName { get; set; }
         public string RoleType { get; set; }
     }

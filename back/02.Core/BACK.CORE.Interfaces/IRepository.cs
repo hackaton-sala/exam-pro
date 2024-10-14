@@ -6,7 +6,7 @@ namespace BACK.CORE.Interfaces
 {
     public interface IRepository<TEntity> where TEntity : class
     {
-        TEntity Get(Guid id);
+        TEntity Get(int id);
         IEnumerable<TEntity> GetAll();
         OQuery<TEntity> GetFiltered(ODataQueryOptions options);
         IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate);

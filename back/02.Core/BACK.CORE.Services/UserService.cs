@@ -35,7 +35,7 @@ namespace BACK.CORE.Services
             _unitOfWork.Complete();
         }
 
-        public User Get(Guid id)
+        public User Get(int id)
         {
             return _unitOfWork.Users.Get(id);
         }
@@ -51,7 +51,7 @@ namespace BACK.CORE.Services
             _unitOfWork.Complete();
         }
 
-        public LoginQuery GetUserFull(Guid UserId)
+        public LoginQuery GetUserFull(int UserId)
         {
             return _unitOfWork.Users.GetUserFull(UserId);
         }

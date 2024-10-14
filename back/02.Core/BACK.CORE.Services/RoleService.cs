@@ -29,7 +29,7 @@ namespace BACK.CORE.Services
             _unitOfWork.Complete();
         }
 
-        public Role Get(Guid id)
+        public Role Get(int id)
         {
             return _unitOfWork.Roles.Get(id);
         }

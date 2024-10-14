@@ -8,7 +8,7 @@ namespace BACK.CORE.Resources
 {
     public class UserResource
     {
-        public Guid UserId { get; set; }
+        public int UserId { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
@@ -19,7 +19,7 @@ namespace BACK.CORE.Resources
         public string? Gender { get; set; }
         public DateTime CreateDate { get; set; }
 
-        public Guid? RoleId { get; set; }
+        public int? RoleId { get; set; }
         public string? Role { get; set; }
     }
 }

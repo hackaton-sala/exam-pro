@@ -35,9 +35,9 @@ namespace BACK.UI.Controllers
 
         // GET /api/Users/{UserId}
         [HttpGet("/api/Users/{UserId}")]
-        public IActionResult Get([FromRoute] string UserId)
+        public IActionResult Get([FromRoute] int UserId)
         {
-            User User = _service.UserService.Get(new Guid(UserId));
+            User User = _service.UserService.Get(UserId);
             if (User == null) return NotFound();
 
             UserResource UserResource = _mapper.Map<UserResource>(User);
@@ -58,11 +58,11 @@ namespace BACK.UI.Controllers
 
         // PUT /api/Users/{UserId}
         [HttpPut("/api/Users/{UserId}")]
-        public IActionResult Put([FromRoute] string UserId, [FromBody] UserResource UserResource)
+        public IActionResult Put([FromRoute] int UserId, [FromBody] UserResource UserResource)
         {
             if (UserResource == null) return BadRequest();
 
-            User UserOld = _service.UserService.Get(new Guid(UserId));
+            User UserOld = _service.UserService.Get(UserId);
             if (UserOld == null) return NotFound();
 
             _service.UserService.Update(UserOld, _mapper.Map<User>(UserResource));
@@ -71,9 +71,9 @@ namespace BACK.UI.Controllers
 
         // DELETE /api/Users/{UserId}
         [HttpDelete("/api/Users/{UserId}")]
-        public IActionResult Delete([FromRoute] string UserId)
+        public IActionResult Delete([FromRoute] int UserId)
         {
-            User User = _service.UserService.Get(new Guid(UserId));
+            User User = _service.UserService.Get(UserId);
             if (User == null) return NotFound();
 
             _service.UserService.Delete(User);

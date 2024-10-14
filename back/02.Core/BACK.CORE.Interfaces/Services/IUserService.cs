@@ -12,6 +12,6 @@ namespace BACK.CORE.Interfaces.Services
     {
         Task<User> FindByEmailAsync(string email);
         Task<bool> CheckPasswordAsync(User user, string password);
-        LoginQuery GetUserFull(Guid UserId);
+        LoginQuery GetUserFull(int UserId);
     }
 }

@@ -20,7 +20,7 @@ namespace BACK.IL.Repository.EF.Repositories
             Context = context;
         }
 
-        public TEntity Get(Guid id)
+        public TEntity Get(int id)
         {
             return Context.Set<TEntity>().Find(id);
         }
