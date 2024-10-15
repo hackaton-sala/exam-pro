@@ -1,0 +1,25 @@
+footer.fin{
+    background-color: black;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  
+                                                      
+  a.prim{
+    width: 30%;
+    float:left;
+    color: white;
+  }
+  
+  a.mid{
+    color: white;
+  }
+  
+  a.fin{
+    width: 40%;
+    float: right;
+    color: white;
+  }
