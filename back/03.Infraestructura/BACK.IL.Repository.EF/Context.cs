@@ -9,8 +9,9 @@ namespace BACK.IL.Repository.EF
         public Context(DbContextOptions options) : base(options) { }
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
-        public DbSet<Role> ExamQuestions { get; set; }
-        public DbSet<Role> Questions { get; set; }
+        public DbSet<ExamQuestion> ExamQuestions { get; set; }
+        public DbSet<Question> Questions { get; set; }
+        public DbSet<GramaticalExam> GramaticalExams { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -18,6 +19,7 @@ namespace BACK.IL.Repository.EF
             modelBuilder.ApplyConfiguration(new RoleConfiguration());
             modelBuilder.ApplyConfiguration(new ExamQuestionConfiguration());
             modelBuilder.ApplyConfiguration(new QuestionConfiguration());
+            modelBuilder.ApplyConfiguration(new GramaticalExamConfiguration());
         }
     }
 }

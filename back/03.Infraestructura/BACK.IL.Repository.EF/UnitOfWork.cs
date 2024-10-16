@@ -23,12 +23,14 @@ namespace BACK.IL.Repository.EF
             Roles = new RoleRepository(_context);
             ExamQuestions = new ExamQuestionRepository(_context); 
             Questions = new QuestionRepository(_context); 
+            GramaticalExams = new GramaticalExamRepository(_context);
         }
 
         public IUserRepository Users { get; private set; }
         public IRoleRepository Roles { get; private set; }
         public IExamQuestionRepository ExamQuestions { get; private set; }
         public IQuestionRepository Questions { get; private set; }
+        public IGramaticalExamRepository GramaticalExams { get; private set; }
 
         public int Complete()
         {
