@@ -22,6 +22,7 @@ namespace BACK.IL.Repository.EF.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+
             modelBuilder.Entity("BACK.CORE.Entities.GramaticalExam", b =>
                 {
                     b.Property<int>("IdExam")
@@ -46,103 +47,183 @@ namespace BACK.IL.Repository.EF.Migrations
                     b.HasKey("IdExam");
 
                     b.ToTable("GramaticalExams");
-                });
 
-            modelBuilder.Entity("BACK.CORE.Entities.Role", b =>
-                {
-                    b.Property<int>("RoleId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
+                    modelBuilder.Entity("BACK.CORE.Entities.ExamQuestion", b =>
+                    {
+                        b.Property<int>("QuestionId")
+                            .ValueGeneratedOnAdd()
+                            .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("RoleId"));
+                        NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("QuestionId"));
 
-                    b.Property<string>("RoleName")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
+                        b.Property<string>("CorrectAnswer")
+                            .IsRequired()
+                            .HasMaxLength(100)
+                            .HasColumnType("character varying(100)");
 
-                    b.Property<string>("RoleType")
-                        .IsRequired()
-                        .HasMaxLength(2)
-                        .HasColumnType("character varying(2)");
+                        b.Property<int>("GramaticalExamId")
+                            .HasMaxLength(50)
+                            .HasColumnType("integer");
 
-                    b.HasKey("RoleId");
+                        b.Property<bool?>("IsCorrect")
+                            .HasMaxLength(20)
+                            .HasColumnType("boolean");
 
-                    b.ToTable("Roles", (string)null);
-                });
+                        b.Property<string>("Question")
+                            .IsRequired()
+                            .HasMaxLength(200)
+                            .HasColumnType("character varying(200)");
 
-            modelBuilder.Entity("BACK.CORE.Entities.User", b =>
-                {
-                    b.Property<int>("UserId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
+                        b.Property<string>("UserAnswer")
+                            .IsRequired()
+                            .HasMaxLength(200)
+                            .HasColumnType("character varying(200)");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("UserId"));
+                        b.HasKey("QuestionId");
 
-                    b.Property<DateTime?>("BirthDate")
-                        .HasColumnType("date");
+                        b.ToTable("ExamQuestion", (string)null);
+                    });
 
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("timestamptz");
+                    modelBuilder.Entity("BACK.CORE.Entities.Question", b =>
+                    {
+                        b.Property<int>("QuestionId")
+                            .ValueGeneratedOnAdd()
+                            .HasColumnType("integer");
 
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
+                        NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("QuestionId"));
 
-                    b.Property<string>("Gender")
-                        .HasMaxLength(1)
-                        .HasColumnType("character varying(1)");
+                        b.Property<string>("CorrectAnswer")
+                            .IsRequired()
+                            .HasMaxLength(100)
+                            .HasColumnType("character varying(100)");
 
-                    b.Property<string>("ID")
-                        .HasMaxLength(9)
-                        .HasColumnType("character varying(9)");
+                        b.Property<string>("Feedback")
+                            .IsRequired()
+                            .HasMaxLength(200)
+                            .HasColumnType("character varying(200)");
 
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
+                        b.Property<int>("IdExam")
+                            .HasMaxLength(50)
+                            .HasColumnType("integer");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
+                        b.Property<bool?>("IsCorrect")
+                            .HasMaxLength(20)
+                            .HasColumnType("boolean");
 
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("character varying(20)");
+                        b.Property<double?>("Score")
+                            .HasMaxLength(20)
+                            .HasColumnType("double precision");
 
-                    b.Property<string>("PhoneNumber")
-                        .HasMaxLength(20)
-                        .HasColumnType("character varying(20)");
+                        b.Property<string>("TextQuestion")
+                            .IsRequired()
+                            .HasMaxLength(200)
+                            .HasColumnType("character varying(200)");
 
-                    b.Property<int>("RoleId")
-                        .HasColumnType("integer");
+                        b.Property<string>("UserAnswer")
+                            .IsRequired()
+                            .HasMaxLength(200)
+                            .HasColumnType("character varying(200)");
 
-                    b.HasKey("UserId");
+                        b.HasKey("QuestionId");
 
-                    b.HasIndex("RoleId");
+                        b.ToTable("Questions", (string)null);
 
-                    b.ToTable("Users", (string)null);
-                });
+                    });
 
-            modelBuilder.Entity("BACK.CORE.Entities.User", b =>
-                {
-                    b.HasOne("BACK.CORE.Entities.Role", "Role")
-                        .WithMany("Users")
-                        .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    modelBuilder.Entity("BACK.CORE.Entities.Role", b =>
+                    {
+                        b.Property<int>("RoleId")
+                            .ValueGeneratedOnAdd()
+                            .HasColumnType("integer");
 
-                    b.Navigation("Role");
-                });
+                        NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("RoleId"));
 
-            modelBuilder.Entity("BACK.CORE.Entities.Role", b =>
-                {
-                    b.Navigation("Users");
-                });
+                        b.Property<string>("RoleName")
+                            .IsRequired()
+                            .HasMaxLength(50)
+                            .HasColumnType("character varying(50)");
+
+                        b.Property<string>("RoleType")
+                            .IsRequired()
+                            .HasMaxLength(2)
+                            .HasColumnType("character varying(2)");
+
+                        b.HasKey("RoleId");
+
+                        b.ToTable("Roles", (string)null);
+                    });
+
+                    modelBuilder.Entity("BACK.CORE.Entities.User", b =>
+                    {
+                        b.Property<int>("UserId")
+                            .ValueGeneratedOnAdd()
+                            .HasColumnType("integer");
+
+                        NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("UserId"));
+
+                        b.Property<DateTime?>("BirthDate")
+                            .HasColumnType("date");
+
+                        b.Property<DateTime>("CreateDate")
+                            .HasColumnType("timestamptz");
+
+                        b.Property<string>("Email")
+                            .IsRequired()
+                            .HasMaxLength(100)
+                            .HasColumnType("character varying(100)");
+
+                        b.Property<string>("Gender")
+                            .HasMaxLength(1)
+                            .HasColumnType("character varying(1)");
+
+                        b.Property<string>("ID")
+                            .HasMaxLength(9)
+                            .HasColumnType("character varying(9)");
+
+                        b.Property<string>("LastName")
+                            .IsRequired()
+                            .HasMaxLength(50)
+                            .HasColumnType("character varying(50)");
+
+                        b.Property<string>("Name")
+                            .IsRequired()
+                            .HasMaxLength(50)
+                            .HasColumnType("character varying(50)");
+
+                        b.Property<string>("Password")
+                            .IsRequired()
+                            .HasMaxLength(20)
+                            .HasColumnType("character varying(20)");
+
+                        b.Property<string>("PhoneNumber")
+                            .HasMaxLength(20)
+                            .HasColumnType("character varying(20)");
+
+                        b.Property<int>("RoleId")
+                            .HasColumnType("integer");
+
+                        b.HasKey("UserId");
+
+                        b.HasIndex("RoleId");
+
+                        b.ToTable("Users", (string)null);
+                    });
+
+                    modelBuilder.Entity("BACK.CORE.Entities.User", b =>
+                    {
+                        b.HasOne("BACK.CORE.Entities.Role", "Role")
+                            .WithMany("Users")
+                            .HasForeignKey("RoleId")
+                            .OnDelete(DeleteBehavior.Cascade)
+                            .IsRequired();
+
+                        b.Navigation("Role");
+                    });
+
+                    modelBuilder.Entity("BACK.CORE.Entities.Role", b => { b.Navigation("Users"); });
 #pragma warning restore 612, 618
+                }
+            );
         }
     }
 }

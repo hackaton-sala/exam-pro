@@ -6,6 +6,8 @@ namespace BACK.CORE.Interfaces
     {
         IUserService UserService { get; }
         IRoleService RoleService { get; }
+        IExamQuestionService ExamQuestionService { get; }
+        IQuestionService QuestionService { get; }
 
         IGramaticalExamService GramaticalExamService { get; }
 

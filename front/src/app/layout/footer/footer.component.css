@@ -1,0 +1,26 @@
+footer.fin{
+  text-align: center;
+}
+
+div.fin{
+  background: #1A2C43;
+  box-sizing: border-box;
+  border: 2px solid #77a3a7;
+}
+
+
+a.prim{
+  width: 30%;
+  float:left;
+  color: white;
+}
+
+a.mid{
+  color: white;
+}
+
+a.fin{
+  width: 40%;
+  float: right;
+  color: white;
+}
