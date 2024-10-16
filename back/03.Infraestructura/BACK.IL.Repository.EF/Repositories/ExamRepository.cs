@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace BACK.IL.Repository.EF.Repositories
 {
-    public class GramaticalExamRepository : Repository<GramaticalExam>, IGramaticalExamRepository
+    public class ExamRepository : Repository<Exam>, IExamRepository
     {
-        public GramaticalExamRepository(DbContext context) : base(context)
+        public ExamRepository(DbContext context) : base(context)
         {
         }
 

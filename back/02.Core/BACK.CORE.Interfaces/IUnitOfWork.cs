@@ -7,8 +7,10 @@ namespace BACK.CORE.Interfaces
         IUserRepository Users { get; }
         IRoleRepository Roles { get; }
         IExamQuestionRepository ExamQuestions { get; }
-        IGramaticalExamRepository GramaticalExams { get; }
+        IGrammarExamRepository GrammarExams { get; }
         IQuestionRepository Questions { get; }
+        IExamRepository Exams { get; }
+        ITextRepository Texts { get; }
 
         int Complete();
         void Dispose();

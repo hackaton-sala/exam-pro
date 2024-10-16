@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 namespace BACK.IL.Repository.EF.EntityConfigurations
 {
     
-    public class GramaticalExamConfiguration : IEntityTypeConfiguration<GramaticalExam>
+    public class GrammarExamConfiguration : IEntityTypeConfiguration<GrammarExam>
     {
-        public void Configure(EntityTypeBuilder<GramaticalExam> builder)
+        public void Configure(EntityTypeBuilder<GrammarExam> builder)
         {
             builder.ToTable("GrammarExams");
 

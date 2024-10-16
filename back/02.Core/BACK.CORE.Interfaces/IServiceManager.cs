@@ -9,7 +9,9 @@ namespace BACK.CORE.Interfaces
         IExamQuestionService ExamQuestionService { get; }
         IQuestionService QuestionService { get; }
 
-        IGramaticalExamService GramaticalExamService { get; }
+        IGrammarExamService GrammarExamService { get; }
+        IExamService ExamService { get; }
+        ITextService TextService { get; }
 
     }
 }

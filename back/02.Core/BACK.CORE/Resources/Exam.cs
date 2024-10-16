@@ -7,14 +7,16 @@ using System.Threading.Tasks;
 
 namespace BACK.CORE.Resources
 {
-    public class GramaticalExamResource
+    public class ExamResource
     {
-        public int IdExam { get; set; }
-        public string UserId { get; set; }
+        public int ExamId { get; set; }
+        //public string UserId { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime? FinishDate { get; set; }
         public string Level { get; set; }  // Nivel (A1, A2, etc.)
-        public ExamState State { get; set; } // Enum: Pendiente, Finalizado
+        public ExamType Type { get; set; } // Tipo: Grammar....
         public ICollection<ExamQuestion> Questions { get; set; }
     }
+    
+    
 }

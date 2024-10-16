@@ -11,7 +11,9 @@ namespace BACK.IL.Repository.EF
         public DbSet<Role> Roles { get; set; }
         public DbSet<ExamQuestion> ExamQuestions { get; set; }
         public DbSet<Question> Questions { get; set; }
-        public DbSet<GramaticalExam> GramaticalExams { get; set; }
+        public DbSet<GrammarExam> GrammarExams { get; set; }
+        public DbSet<Exam> Exams { get; set; }
+        public DbSet<Text> Texts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -19,7 +21,9 @@ namespace BACK.IL.Repository.EF
             modelBuilder.ApplyConfiguration(new RoleConfiguration());
             modelBuilder.ApplyConfiguration(new ExamQuestionConfiguration());
             modelBuilder.ApplyConfiguration(new QuestionConfiguration());
-            modelBuilder.ApplyConfiguration(new GramaticalExamConfiguration());
+            modelBuilder.ApplyConfiguration(new GrammarExamConfiguration());
+            modelBuilder.ApplyConfiguration(new ExamConfiguration());
+            modelBuilder.ApplyConfiguration(new TextConfiguration());
         }
     }
 }
