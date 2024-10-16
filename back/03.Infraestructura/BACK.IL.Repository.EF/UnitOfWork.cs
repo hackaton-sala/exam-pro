@@ -22,11 +22,13 @@ namespace BACK.IL.Repository.EF
             Users = new UserRepository(_context);
             Roles = new RoleRepository(_context);
             ExamQuestions = new ExamQuestionRepository(_context); 
+            Questions = new QuestionRepository(_context); 
         }
 
         public IUserRepository Users { get; private set; }
         public IRoleRepository Roles { get; private set; }
         public IExamQuestionRepository ExamQuestions { get; private set; }
+        public IQuestionRepository Questions { get; private set; }
 
         public int Complete()
         {

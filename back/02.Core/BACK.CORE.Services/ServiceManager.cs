@@ -19,9 +19,11 @@ namespace BACK.CORE.Services
             UserService = new UserService(_unitOfWork, _mapper);
             RoleService = new RoleService(_unitOfWork, _mapper);
             ExamQuestionService = new ExamQuestionService(_unitOfWork, _mapper);
+            QuestionService = new QuestionService(_unitOfWork, _mapper);
         }
         public IUserService UserService { get; private set; }
         public IRoleService RoleService { get; private set; }
         public IExamQuestionService ExamQuestionService { get; private set; }
+        public IQuestionService QuestionService { get; private set; }
     }
 }
