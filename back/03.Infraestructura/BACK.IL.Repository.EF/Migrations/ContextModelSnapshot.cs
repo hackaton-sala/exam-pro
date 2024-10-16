@@ -22,6 +22,42 @@ namespace BACK.IL.Repository.EF.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("BACK.CORE.Entities.ExamQuestion", b =>
+                {
+                    b.Property<int>("QuestionId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("QuestionId"));
+
+                    b.Property<string>("CorrectAnswer")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<int>("GramaticalExamId")
+                        .HasMaxLength(50)
+                        .HasColumnType("integer");
+
+                    b.Property<bool?>("IsCorrect")
+                        .HasMaxLength(20)
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("Question")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<string>("UserAnswer")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.HasKey("QuestionId");
+
+                    b.ToTable("ExamQuestion", (string)null);
+                });
+
             modelBuilder.Entity("BACK.CORE.Entities.Role", b =>
                 {
                     b.Property<int>("RoleId")
