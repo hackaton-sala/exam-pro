@@ -6,6 +6,7 @@ namespace BACK.CORE.Interfaces
     {
         IUserRepository Users { get; }
         IRoleRepository Roles { get; }
+        IExamQuestionRepository ExamQuestions { get; }
 
         int Complete();
         void Dispose();
