@@ -1,0 +1,50 @@
+body.fondo{
+  background-image: url("/images/fondo1.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+img.profuturo{
+  float: right
+}
+
+div.seccion{
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+div.formulario{
+  background-color: #7d622f9c;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+form.seccion{
+  display: grid;
+  grid-template-columns: auto auto 0px;
+  text-align: center;
+  font-family: Optima, sans-serif;
+  font-size: 20px;
+  padding-top: 20px;
+}
+
+label{
+  padding: .4em
+}
+
+input.input {
+  appearance: none;
+  border: none;
+  outline: none;
+  border-bottom: .2em solid #6E5C3C;
+  background: rgba(#98896D, .2);
+  border-radius: .2em .2em 0 0;
+  padding: .4em;
+  color: #98896D;
+  width: fit-content;
+  height: 20px;
+}
+
+div.linea{
+  margin-top: 5px;
+}
