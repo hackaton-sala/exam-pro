@@ -3,7 +3,8 @@
   <img src="/images/Upsa.png" height="80" width="200">
   <img src="/images/profuturo.png" height="80" width="200" class="profuturo">
   <div class="seccion">
-    <div>
+    <div class="txt">
+      <p>Complete los siguientes datos para crear su cuenta en EXAM PRO</p>
     </div>
     <div class="formulario">
       <form class="seccion">
@@ -12,6 +13,22 @@
         <br>
         <label>Apellidos: </label>
         <input type="text" placeholder="Apellidos" class="input">
+        <br>
+        <label>Email: </label>
+        <input type="text" placeholder="Email" class="input">
+        <br>
+        <label>Teléfono: </label>
+        <input type="tel" placeholder="Teléfono" pattern="[0-9]{9}" maxlength="9" class="input">
+        <br>
+        <label>Fecha de nacimiento: </label>
+        <input type="date" placeholder="Fecha" class="input">
+        <br>
+        <label>Género: </label>
+        <select class="input">
+          <option value="male">Hombre</option>
+          <option value="female">Mujer</option>
+          <option value="Other">Otro</option>
+        </select>
       </form>
     </div>
   </div>
