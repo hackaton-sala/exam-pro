@@ -7,24 +7,36 @@ import { NoPageFoundComponent } from './error/nopagefound/nopagefound.component'
 import { LoginComponent } from './login/login.component';
 import { UserService } from './services/application/user.service';
 import { AuthService } from './services/common/auth.service';
-
-
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
+import { RegisterComponent } from './register/register.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     LoginComponent,
     NoPageFoundComponent,
-    AppComponent
+    AppComponent,
+    RegisterComponent
   ],
   imports: [
     AppRoutingModule,
     ApplicationModule,
     HttpClientModule,
-    BrowserModule
+    BrowserModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatSelectModule,
+    ReactiveFormsModule
   ],
   providers: [
     AuthService,
-    UserService
+    UserService,
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })
