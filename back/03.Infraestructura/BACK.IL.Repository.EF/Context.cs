@@ -11,6 +11,9 @@ namespace BACK.IL.Repository.EF
         public DbSet<Role> Roles { get; set; }
         public DbSet<ExamQuestion> ExamQuestions { get; set; }
         public DbSet<Question> Questions { get; set; }
+        public DbSet<Question> UseOfEnglishQuestions { get; set; }
+        public DbSet<Question> WritingQuestions { get; set; }
+        public DbSet<Question> ReadingQuestions { get; set; }
         public DbSet<GrammarExam> GrammarExams { get; set; }
         public DbSet<Exam> Exams { get; set; }
         public DbSet<Text> Texts { get; set; }
@@ -21,6 +24,9 @@ namespace BACK.IL.Repository.EF
             modelBuilder.ApplyConfiguration(new RoleConfiguration());
             modelBuilder.ApplyConfiguration(new ExamQuestionConfiguration());
             modelBuilder.ApplyConfiguration(new QuestionConfiguration());
+            modelBuilder.ApplyConfiguration(new UseOfEnglishQuestionConfiguration());
+            modelBuilder.ApplyConfiguration(new ReadingQuestionConfiguration());
+            modelBuilder.ApplyConfiguration(new WritingQuestionConfiguration());
             modelBuilder.ApplyConfiguration(new GrammarExamConfiguration());
             modelBuilder.ApplyConfiguration(new ExamConfiguration());
             modelBuilder.ApplyConfiguration(new TextConfiguration());

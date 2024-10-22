@@ -23,6 +23,9 @@ namespace BACK.IL.Repository.EF
             Roles = new RoleRepository(_context);
             ExamQuestions = new ExamQuestionRepository(_context); 
             Questions = new QuestionRepository(_context); 
+            UseOfEnglishQuestions = new UseOfEnglishQuestionRepository(_context); 
+            ReadingQuestions = new ReadingQuestionRepository(_context); 
+            WritingQuestions = new WritingQuestionRepository(_context); 
             GrammarExams = new GrammarExamRepository(_context);
             Exams = new ExamRepository(_context);
             Texts = new TextRepository(_context);
@@ -32,6 +35,9 @@ namespace BACK.IL.Repository.EF
         public IRoleRepository Roles { get; private set; }
         public IExamQuestionRepository ExamQuestions { get; private set; }
         public IQuestionRepository Questions { get; private set; }
+        public IUseOfEnglishQuestionRepository UseOfEnglishQuestions { get; private set; }
+        public IReadingQuestionRepository ReadingQuestions { get; private set; }
+        public IWritingQuestionRepository WritingQuestions { get; private set; }
         public IGrammarExamRepository GrammarExams { get; private set; }
         public IExamRepository Exams { get; private set; }
         public ITextRepository Texts { get; private set; }

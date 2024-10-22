@@ -9,6 +9,9 @@ namespace BACK.CORE.Interfaces
         IExamQuestionRepository ExamQuestions { get; }
         IGrammarExamRepository GrammarExams { get; }
         IQuestionRepository Questions { get; }
+        IUseOfEnglishQuestionRepository UseOfEnglishQuestions { get; }
+        IReadingQuestionRepository ReadingQuestions { get; }
+        IWritingQuestionRepository WritingQuestions { get; }
         IExamRepository Exams { get; }
         ITextRepository Texts { get; }
 

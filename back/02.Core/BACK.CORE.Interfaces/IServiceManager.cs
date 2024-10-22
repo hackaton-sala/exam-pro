@@ -1,4 +1,5 @@
-﻿ using BACK.CORE.Interfaces.Services;
+﻿ using BACK.CORE.Interfaces.Repositories;
+ using BACK.CORE.Interfaces.Services;
 
 namespace BACK.CORE.Interfaces
 {
@@ -7,6 +8,9 @@ namespace BACK.CORE.Interfaces
         IUserService UserService { get; }
         IRoleService RoleService { get; }
         IExamQuestionService ExamQuestionService { get; }
+        IUseOfEnglishQuestionService UseOfEnglishQuestionService { get; }
+        IReadingQuestionService ReadingQuestionService { get; }
+        IWritingQuestionService WritingQuestionService { get; }
         IQuestionService QuestionService { get; }
 
         IGrammarExamService GrammarExamService { get; }

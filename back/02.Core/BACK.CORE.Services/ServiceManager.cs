@@ -20,6 +20,9 @@ namespace BACK.CORE.Services
             RoleService = new RoleService(_unitOfWork, _mapper);
             ExamQuestionService = new ExamQuestionService(_unitOfWork, _mapper);
             QuestionService = new QuestionService(_unitOfWork, _mapper);
+            UseOfEnglishQuestionService = new UseOfEnglishQuestionService(_unitOfWork, _mapper);
+            ReadingQuestionService = new ReadingQuestionService(_unitOfWork, _mapper);
+            WritingQuestionService = new WritingQuestionService(_unitOfWork, _mapper);
             GrammarExamService = new GrammarExamService(_unitOfWork, _mapper);
             ExamService = new ExamService(_unitOfWork, _mapper);
             TextService = new TextService(_unitOfWork, _mapper);
@@ -29,6 +32,9 @@ namespace BACK.CORE.Services
         public IGrammarExamService GrammarExamService {  get; private set; }
         public IExamQuestionService ExamQuestionService {  get; private set; }
         public IQuestionService QuestionService {  get; private set; }
+        public IUseOfEnglishQuestionService UseOfEnglishQuestionService {  get; private set; }
+        public IReadingQuestionService ReadingQuestionService {  get; private set; }
+        public IWritingQuestionService WritingQuestionService {  get; private set; }
         public IExamService ExamService {  get; private set; }
         public ITextService TextService {  get; private set; }
            
