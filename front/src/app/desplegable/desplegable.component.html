@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Menù Lateral con Css</title>
+  <link rel="stylesheet" href="t.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <div class="btn-menu">
+      <label for="btn-menu">☰</label>
+    </div>
+    <div class="logo">
+      <h1>Logotipo</h1>
+    </div>
+  </div>
+</header>
+<div class="capa"></div>
+<input type="checkbox" id="btn-menu">
+<div class="container-menu">
+  <div class="cont-menu">
+    <nav>
+      <a href="#"><i class="fas fa-home"></i> Inicio </a>
+      <div class="dropdown">
+        <a class="dropdown-btn"><i class="fas fa-book"></i> Reading <i class="fas fa-caret-down"></i></a>
+        <div class="dropdown-content">
+          <ul class="dropdown-content">
+            <li><a href="#"><i class="fas fa-eye"></i> Parte 1 </a></li>
+            <li><a href="#"><i class="fas fa-eye"></i> Parte 2 </a></li>
+            <li><a href="#"><i class="fas fa-eye"></i> Parte 3 </a></li>
+            <li><a href="#"><i class="fas fa-eye"></i> Parte 4 </a></li>
+            <li><a href="#"><i class="fas fa-eye"></i> Parte 5 </a></li>
+            <li><a href="#"><i class="fas fa-eye"></i> Parte 6 </a></li>
+            <li><a href="#"><i class="fas fa-eye"></i> Parte 7 </a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a><i class="fas fa-pencil-square"></i> Writing <i class="fas fa-caret-down"></i></a>
+        <div class="dropdown-content">
+          <a href="#"><i class="fas fa-pencil"></i> Parte 1</a>
+          <a href="#"><i class="fas fa-pencil"></i> Parte 2</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a><i class="fas fa-headphones"></i> Listening <i class="fas fa-caret-down"></i></a>
+        <div class="dropdown-content">
+          <a href="#"><i class="fas fa-dot-circle"></i> Parte 1</a>
+          <a href="#"><i class="fas fa-dot-circle"></i> Parte 2</a>
+          <a href="#"><i class="fas fa-dot-circle"></i> Parte 3</a>
+          <a href="#"><i class="fas fa-dot-circle"></i> Parte 4</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a><i class="fas fa-volume-up"></i> Speaking <i class="fas fa-caret-down"></i></a>
+        <div class="dropdown-content">
+          <a href="#"><i class="fas fa-microphone"></i> Parte 1</a>
+          <a href="#"><i class="fas fa-microphone"></i> Parte 2</a>
+          <a href="#"><i class="fas fa-microphone"></i> Parte 3</a>
+          <a href="#"><i class="fas fa-microphone"></i> Parte 4</a>
+        </div>
+      </div>
+      <a href="#"><i class="fas fa-users"></i> Nosotros</a>
+    </nav>
+    <label for="btn-menu">✖️</label>
+  </div>
+</div>
+</body>
+</html>
