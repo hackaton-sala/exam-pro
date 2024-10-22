@@ -17,7 +17,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { DesplegableComponent } from './desplegable/desplegable.component';
-import { listenerCount } from 'process';
 import { ListeningComponent } from './listening/listening.component';
 import {Reading1Component} from "./reading1/reading1.component";
 import {Reading5Component} from "./reading5/reading5.component";
@@ -34,8 +33,6 @@ import {Reading5Component} from "./reading5/reading5.component";
     DesplegableComponent,
     Reading5Component,
     Reading1Component
-
-
   ],
   imports: [
     AppRoutingModule,
@@ -46,9 +43,7 @@ import {Reading5Component} from "./reading5/reading5.component";
     MatInputModule,
     MatButtonModule,
     MatSelectModule,
-    ReactiveFormsModule,
-    Reading1Component,
-    Reading1Component
+    ReactiveFormsModule
   ],
   providers: [
     AuthService,
