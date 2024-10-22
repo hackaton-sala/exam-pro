@@ -1,0 +1,52 @@
+/* Estilos básicos para la página */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+p {
+  color: #555;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid rgba(0, 0, 0, 0);
+  resize: none;
+  font-size: 16px;
+}
+
+audio {
+  margin-top: 20px;
+  width: 300px;
+  height: 30px;
+  outline: none;
+}
+
+button {
+  background-color: #BBEAF7;
+  color: #475E78;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #B0BBF7;
+}
+
+button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}

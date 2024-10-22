@@ -1,25 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listening</title>
+    <link rel="stylesheet" href="listening.component.css">
+</head>
+<body>
+    
+
+<div class="body">
 <div class="audio-container">
-    <h2>Escucha el audio y completa las palabras faltantes:</h2>
+    <h2>Escucha el audio y completa las palabras restantes:</h2>
   
-    <div class="mic-icon" onclick="playAudio()">
-      <img src="assets/img/microphone.png" alt="Micrófono">
+    <div class="mic-icon" (click)="playAudio()">
+      <img src="/assets/img/microphone.jpeg" alt="Micrófono">
     </div>
   
     <audio id="audioPlayer">
-      <source src="assets/audio/tu-audio.mp3" type="audio/mpeg">
-      Tu navegador no soporta la reproducción de audio.
+      <source src="assets/static/FCE-LIST-PART-2-EX-15-mp3cut.net-1.mp3" type="audio/mpeg">
     </audio>
   
     <div class="phrases-container">
-      <p>El clima está <input type="text" id="word1" placeholder="____"> y soleado.</p>
-      <p>Vamos a la <input type="text" id="word2" placeholder="____"> mañana.</p>
-      <p>Me gusta comer <input type="text" id="word3" placeholder="____"> en el almuerzo.</p>
+      <p>The speaker admits he has to get up at the crack of <input type="text" id="word1" placeholder="____"> in his shorts, whatever the weather.</p>
+      <p>His work can be nice in the summer, but <input type="text" id="word2" placeholder="____"> in the winter.</p>
+      <p>The best bit for him is when a student learns a <input type="text" id="word3" placeholder="____"> he has been teaching.</p>
+      <p>He also enjoys the kid’s <input type="text" id="word4" placeholder="____"> when they answer a question they thought they couldn’t.</p>
+      <p>Another pleasing thing is the <input type="text" id="word5" placeholder="____"> other kids give each other when they learn a new skill.</p>
+      <p>He explains he was lucky to be offered a <input type="text" id="word6" placeholder="____"> degree at Lincoln.</p>
+      <p>There was a requirement for him to do a week’s study during his <input type="text" id="word7" placeholder="____"> holidays.</p>
+      <p>He had a good time in Lincoln and is still close <input type="text" id="word8" placeholder="____"> with everyone up there.</p>
+      <p>He then worked for two years as a health <input type="text" id="word9" placeholder="____"> practitioner.</p>
+      <p>That job was a <input type="text" id="word10" placeholder="____"> until he got into teaching.</p>
     </div>
   
     <div class="button-container">
-      <button onclick="checkAnswers()">Comprobar respuestas</button>
+      <button (click)="checkAnswers()">Comprobar respuestas</button>
     </div>
   
     <div id="result" class="result-message"></div>
   </div>
+</div>
   
+</body>
+</html>
