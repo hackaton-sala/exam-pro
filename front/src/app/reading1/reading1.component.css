@@ -57,3 +57,31 @@ button:hover {
   grid-template-columns: 50% 50%;
 
 }
+
+.opciones{
+  display: grid;
+  grid-template-columns: auto auto;
+  text-align: center;
+}
+
+div.radio{
+  padding: 10px;
+  text-align: left;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+
+
+input.submit{
+  width: 90%;
+  padding: 10px;
+  background-color: #BBEAF7;
+  color: #475E78;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 5%;
+  transition: background-color 0.3s ease;
+}
