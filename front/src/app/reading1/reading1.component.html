@@ -8,6 +8,7 @@
   </div>
   <form>
     <div class="opciones">
+      <!-- Opciones de radio buttons -->
       <div>
         <h3>Opción A</h3>
         <div class="radio">
@@ -76,7 +77,26 @@
       </div>
     </div>
 
-    <input type="submit" value="Enviar respuestas" class="submit">
+    <input type="submit" value="Enviar respuestas" class="submit" id="submitBtn" disabled>
   </form>
 </div>
+
+<script>
+  // Función para verificar si todos los grupos de opciones tienen una seleccionada
+  function checkIfAllSelected() {
+    const opciones = ['opcionA', 'opcionB', 'opcionC', 'opcionD', 'opcionE', 'opcionF'];
+    return opciones.every(opcion => document.querySelector(`input[name="${opcion}"]:checked`));
+  }
+
+  // Referencia al botón de enviar
+  const submitBtn = document.getElementById('submitBtn');
+
+  // Añadir evento a los inputs de tipo radio
+  document.querySelectorAll('input[type="radio"]').forEach(radio => {
+    radio.addEventListener('change', function() {
+      // Si todas las opciones están seleccionadas, habilitar el botón
+      submitBtn.disabled = !checkIfAllSelected();
+    });
+  });
+</script>
 </body>
