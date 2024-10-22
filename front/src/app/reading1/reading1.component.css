@@ -30,7 +30,7 @@ textarea {
   width: 100%;
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 2px solid rgba(0, 0, 0, 0);
   resize: none;
   font-size: 16px;
 }
