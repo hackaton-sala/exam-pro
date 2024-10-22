@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid rgba(0, 0, 0, 0);
+  resize: none;
+  font-size: 16px;
+}
+
+button {
+  width: 90%;
+  padding: 10px;
+  background-color: #BBEAF7;
+  color: #475E78;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 5%;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #B0BBF7;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: 50% 50%;
+
+}
+
+.opciones{
+  display: grid;
+  grid-template-columns: auto auto;
+  text-align: center;
+}
+
+div.radio{
+  padding: 10px;
+  text-align: left;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+
+
+input.submit{
+  width: 90%;
+  padding: 10px;
+  background-color: #BBEAF7;
+  color: #475E78;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 5%;
+  transition: background-color 0.3s ease;
+}
