@@ -1,0 +1,25 @@
+<div class="audio-container">
+    <h2>Escucha el audio y completa las palabras faltantes:</h2>
+  
+    <div class="mic-icon" onclick="playAudio()">
+      <img src="assets/img/microphone.png" alt="Micrófono">
+    </div>
+  
+    <audio id="audioPlayer">
+      <source src="assets/audio/tu-audio.mp3" type="audio/mpeg">
+      Tu navegador no soporta la reproducción de audio.
+    </audio>
+  
+    <div class="phrases-container">
+      <p>El clima está <input type="text" id="word1" placeholder="____"> y soleado.</p>
+      <p>Vamos a la <input type="text" id="word2" placeholder="____"> mañana.</p>
+      <p>Me gusta comer <input type="text" id="word3" placeholder="____"> en el almuerzo.</p>
+    </div>
+  
+    <div class="button-container">
+      <button onclick="checkAnswers()">Comprobar respuestas</button>
+    </div>
+  
+    <div id="result" class="result-message"></div>
+  </div>
+  
