@@ -14,13 +14,19 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { RegisterComponent } from './register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { DesplegableComponent } from './desplegable/desplegable.component';
 
 @NgModule({
   declarations: [
     LoginComponent,
     NoPageFoundComponent,
     AppComponent,
-    RegisterComponent
+    RegisterComponent,
+    HeaderComponent,
+    FooterComponent,
+    DesplegableComponent
   ],
   imports: [
     AppRoutingModule,
