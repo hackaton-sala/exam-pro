@@ -11,6 +11,8 @@ namespace BACK.CORE.Interfaces
         IQuestionRepository Questions { get; }
         IUseOfEnglishQuestionRepository UseOfEnglishQuestions { get; }
         IReadingQuestionRepository ReadingQuestions { get; }
+        ISpeakingQuestionRepository SpeakingQuestions { get; }
+        IListeningQuestionRepository ListeningQuestions { get; }
         IWritingQuestionRepository WritingQuestions { get; }
         IExamRepository Exams { get; }
         ITextRepository Texts { get; }

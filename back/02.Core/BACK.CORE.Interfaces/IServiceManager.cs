@@ -11,6 +11,8 @@ namespace BACK.CORE.Interfaces
         IUseOfEnglishQuestionService UseOfEnglishQuestionService { get; }
         IReadingQuestionService ReadingQuestionService { get; }
         IWritingQuestionService WritingQuestionService { get; }
+        ISpeakingQuestionService SpeakingQuestionService { get; }
+        IListeningQuestionService ListeningQuestionService { get; }
         IQuestionService QuestionService { get; }
 
         IGrammarExamService GrammarExamService { get; }

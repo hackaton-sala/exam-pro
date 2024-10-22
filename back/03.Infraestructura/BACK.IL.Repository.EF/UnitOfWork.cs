@@ -26,6 +26,8 @@ namespace BACK.IL.Repository.EF
             UseOfEnglishQuestions = new UseOfEnglishQuestionRepository(_context); 
             ReadingQuestions = new ReadingQuestionRepository(_context); 
             WritingQuestions = new WritingQuestionRepository(_context); 
+            SpeakingQuestions = new SpeakingQuestionRepository(_context); 
+            ListeningQuestions = new ListeningQuestionRepository(_context); 
             GrammarExams = new GrammarExamRepository(_context);
             Exams = new ExamRepository(_context);
             Texts = new TextRepository(_context);
@@ -38,6 +40,8 @@ namespace BACK.IL.Repository.EF
         public IUseOfEnglishQuestionRepository UseOfEnglishQuestions { get; private set; }
         public IReadingQuestionRepository ReadingQuestions { get; private set; }
         public IWritingQuestionRepository WritingQuestions { get; private set; }
+        public ISpeakingQuestionRepository SpeakingQuestions { get; private set; }
+        public IListeningQuestionRepository ListeningQuestions { get; private set; }
         public IGrammarExamRepository GrammarExams { get; private set; }
         public IExamRepository Exams { get; private set; }
         public ITextRepository Texts { get; private set; }
