@@ -19,6 +19,8 @@ import { FooterComponent } from './footer/footer.component';
 import { DesplegableComponent } from './desplegable/desplegable.component';
 import { listenerCount } from 'process';
 import { ListeningComponent } from './listening/listening.component';
+import {Reading1Component} from "./reading1/reading1.component";
+import {Reading5Component} from "./reading5/reading5.component";
 
 @NgModule({
   declarations: [
@@ -29,7 +31,11 @@ import { ListeningComponent } from './listening/listening.component';
     ListeningComponent,
     HeaderComponent,
     FooterComponent,
-    DesplegableComponent
+    DesplegableComponent,
+    Reading5Component,
+    Reading1Component
+
+
   ],
   imports: [
     AppRoutingModule,
@@ -40,7 +46,9 @@ import { ListeningComponent } from './listening/listening.component';
     MatInputModule,
     MatButtonModule,
     MatSelectModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Reading1Component,
+    Reading1Component
   ],
   providers: [
     AuthService,
