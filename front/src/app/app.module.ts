@@ -17,6 +17,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { DesplegableComponent } from './desplegable/desplegable.component';
+import { listenerCount } from 'process';
+import { ListeningComponent } from './listening/listening.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { DesplegableComponent } from './desplegable/desplegable.component';
     NoPageFoundComponent,
     AppComponent,
     RegisterComponent,
+    ListeningComponent,
     HeaderComponent,
     FooterComponent,
     DesplegableComponent

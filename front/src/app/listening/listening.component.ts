@@ -9,8 +9,10 @@ export class ListeningComponent {
   correctAnswers: string[] = ['dawn', 'horrible', 'concept', 'expressions', 'encouragement', 'master’s', 'summer', 'friends', 'fitness', 'stepping stone'];
 
   // Función para reproducir el audio
-  playAudio(): void {
+  public playAudio(){
+    console.log("play audio")
     const audio = document.getElementById('audioPlayer') as HTMLAudioElement;
+    console.log(audio);
     if (audio) {
       audio.play();
     }

@@ -4,11 +4,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { NoPageFoundComponent } from './error/nopagefound/nopagefound.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { ListeningComponent } from './listening/listening.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
+  {path: 'listening', component: ListeningComponent},
   {path: 'nopagefound', component: NoPageFoundComponent},
   {path: '**', component: NoPageFoundComponent},
 ]
