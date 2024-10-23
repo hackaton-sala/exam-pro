@@ -1,12 +1,13 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { WritingService } from '../services/application/writing.service';
 
 @Component({
   selector: 'app-writing1',
   templateUrl: './writing1.component.html',
   styleUrls: ['./writing1.component.css']
 })
-export class Writing1Component {
+export class Writing1Component implements OnInit {
   writingText: string = '';
   outputText: string = ''; // Añade esta línea para almacenar el texto generado
   wordCounterText: string = 'Palabras: 0/170';
@@ -39,7 +40,33 @@ export class Writing1Component {
     "The Forgotten Gods: Write about ancient gods trying to reclaim their worshippers in the modern world."
   ];
 
-  constructor(public dialog: MatDialog){}
+  constructor(
+    private writingService: WritingService,
+    public dialog: MatDialog
+  ){}
+
+  ngOnInit(): void {
+    // this.generateFeedback();
+  }
+
+  user_text='A great time to spend your free time!  \
+    Football is my favourite leisure free time activity. It is a sport that allows you to be fit, socialize with people and relax your mind from studies or work.\
+    I started playing football when I was 5 years old, so I have been playing it for 16 years. At first, my father used to take me to the training, so he allowed me to practice this sport and gives me the passion to have fun with it. \
+    I enjoyed football so much because of many facts. Firstly, it makes me healthier than if I don’t do any sport, and, I also become more relaxed before I play it. Secondly, this sport is so passionate, and I love this as I feel adrenaline that gives me strength to give more to my team and play better. \
+    I recommended you trying to play football, specially if you are young, because if you train hard, you will be a better player and you will enjoy the sport as I do, which would allow you to feel relaxed and have a lot of new experiences.'
+
+  generateFeedback() {
+    const prompt = "Generate 5 grammar questions for a B2 level English exam with 4 options each.";
+    this.writingService.generateFeedback(this.user_text).subscribe(
+      (response) => {
+        this.openDialog(response.feedback);
+        console.log(response);  // Mostrar las preguntas generadas
+      },
+      (error) => {
+        console.error('Error al generar preguntas', error);
+      }
+    );
+  }
 
   countWords(text: string): number {
     return text.trim().split(/\s+/).filter((word) => word.length > 0).length;
@@ -71,10 +98,12 @@ export class Writing1Component {
     this.outputText = this.texts[randomIndex]; // Asigna un texto aleatorio a outputText
   }
 
-  openDialog(): void {
+
+
+  openDialog(feedback: string): void {
     const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
-      width: '250px',
-      data: {name: "", animal: ""}
+      width: '1000px',
+      data: {name: feedback}
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -86,6 +115,7 @@ export class Writing1Component {
 @Component({
   selector: 'dialog-writing',
   templateUrl: 'dialog-writing.html',
+  styleUrls: ['./dialog-writing.css']
 })
 export class DialogOverviewExampleDialog {
 
