@@ -25,6 +25,7 @@ import {DialogOverviewExampleDialog, Writing1Component} from "./writing1/writing
 import {InicioComponent} from "./inicio/inicio.component";
 import {UsertableComponent} from "./usertable/usertable.component";
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     ReactiveFormsModule,
     FormsModule,
     InicioComponent,
-    MatDialogModule
+    MatDialogModule,
+    MatProgressSpinnerModule
   ],
   providers: [
     AuthService,
