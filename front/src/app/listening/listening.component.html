@@ -1,18 +1,16 @@
-
-    
-
+<br>
 <div class="body">
 <div class="audio-container">
     <h2>Escucha el audio y completa las palabras restantes:</h2>
-  
+
     <div class="mic-icon" (click)="playAudio()">
       <img src="assets/img/microphone.jpeg" alt="Micrófono">
     </div>
-  
+
     <audio id="audioPlayer">
       <source src="assets/static/FCE-LIST-PART-2-EX-15-mp3cut.net-1.mp3" type="audio/mpeg">
     </audio>
-  
+
     <div class="phrases-container">
       <p>The speaker admits he has to get up at the crack of <input type="text" id="word1" placeholder="____"> in his shorts, whatever the weather.</p>
       <p>His work can be nice in the summer, but <input type="text" id="word2" placeholder="____"> in the winter.</p>
@@ -25,11 +23,13 @@
       <p>He then worked for two years as a health <input type="text" id="word9" placeholder="____"> practitioner.</p>
       <p>That job was a <input type="text" id="word10" placeholder="____"> until he got into teaching.</p>
     </div>
-  
+
     <div class="button-container">
       <button (click)="checkAnswers()">Comprobar respuestas</button>
     </div>
-  
+
     <div id="result" class="result-message"></div>
   </div>
 </div>
+
+<br>
