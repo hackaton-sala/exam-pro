@@ -21,9 +21,10 @@ import { ListeningComponent } from './listening/listening.component';
 import {Reading1Component} from "./reading1/reading1.component";
 import {Reading5Component} from "./reading5/reading5.component";
 import {Speaking1Component} from "./speaking1/speaking1.component";
-import {Writing1Component} from "./writing1/writing1.component";
+import {DialogOverviewExampleDialog, Writing1Component} from "./writing1/writing1.component";
 import {InicioComponent} from "./inicio/inicio.component";
 import {UsertableComponent} from "./usertable/usertable.component";
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import {UsertableComponent} from "./usertable/usertable.component";
     Reading1Component,
     Speaking1Component,
     Writing1Component,
-    UsertableComponent
+    UsertableComponent,
+    DialogOverviewExampleDialog
   ],
   imports: [
     AppRoutingModule,
@@ -52,7 +54,8 @@ import {UsertableComponent} from "./usertable/usertable.component";
     MatSelectModule,
     ReactiveFormsModule,
     FormsModule,
-    InicioComponent
+    InicioComponent,
+    MatDialogModule
   ],
   providers: [
     AuthService,
