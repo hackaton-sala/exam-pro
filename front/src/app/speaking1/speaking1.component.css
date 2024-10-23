@@ -24,6 +24,11 @@ textarea {
   font-size: 16px;
 }
 
+.grid{
+  display: grid;
+  grid-template-columns: auto 40% auto 40% auto;
+}
+
 audio {
   margin-top: 20px;
   width: 300px;

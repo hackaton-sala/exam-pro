@@ -1,100 +1,25 @@
 <body>
+  <h1>Speaking</h1>
+  <textarea id="inputText" placeholder="Pulse el botón para generar su reading" rows="10" readonly></textarea>
 
-<h1>Speaking</h1>
-<textarea id="inputText" placeholder="Pulse el botón para generar su reading" rows="10" readonly></textarea>
-<div class="grid">
-  <button id="copyButton">Copiar texto</button>
-  <button id="generateButton">Generar nuevo texto</button>
-</div>
+  <div class="grid">
+    <a></a>
+    <button (click)="copyText()">Copiar texto</button>
+    <a></a>
+    <button (click)="generateText()">Generar nuevo texto</button>
+    <a></a>
+  </div>
 
-<p>Pulsa el botón para grabar el audio y luego vuelve a pulsarlo para detener la grabación y escuchar lo grabado.</p>
+  <br>
 
-<!-- Elemento de audio donde se reproducirá el sonido capturado -->
-<audio id="audioReceptor" controls></audio>
+  <p>Pulsa el botón para grabar el audio y luego vuelve a pulsarlo para detener la grabación y escuchar lo grabado.</p>
 
-<!-- Botón para iniciar o detener la grabación -->
-<button id="toggleButton">Iniciar grabación</button>
+  <!-- Elemento de audio donde se reproducirá el sonido capturado -->
+  <audio #audioReceptor controls></audio>
 
-<!-- Botón para enviar el audio grabado -->
-<button id="sendButton" disabled>Enviar audio</button>
+  <!-- Botón para iniciar o detener la grabación -->
+  <button (click)="toggleRecording()">{{ recordingButtonText }}</button>
 
-<script>
-  const audioReceptor = document.getElementById('audioReceptor');
-  const toggleButton = document.getElementById('toggleButton');
-  const sendButton = document.getElementById('sendButton');
-
-  let mediaRecorder;
-  let audioChunks = [];
-  let audioBlob;
-  let isRecording = false;
-
-  // Función para iniciar o detener la grabación de audio
-  async function toggleRecording() {
-    if (!isRecording) {
-      // Si no está grabando, iniciar la grabación
-      try {
-        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-        mediaRecorder = new MediaRecorder(stream);
-
-        // Almacenar los fragmentos de audio a medida que se graban
-        mediaRecorder.ondataavailable = (event) => {
-          audioChunks.push(event.data);
-        };
-
-        // Cuando se detenga la grabación, crear un blob de audio y asignarlo al reproductor
-        mediaRecorder.onstop = () => {
-          audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
-          const audioUrl = URL.createObjectURL(audioBlob);
-          audioReceptor.src = audioUrl;
-          sendButton.disabled = false; // Habilitar el botón de enviar cuando se detiene la grabación
-          audioChunks = []; // Limpiar los fragmentos de audio para una nueva grabación
-        };
-
-        mediaRecorder.start();
-        toggleButton.textContent = "Detener grabación";
-        isRecording = true;
-      } catch (error) {
-        console.error('Error al acceder al micrófono:', error);
-      }
-    } else {
-      // Si está grabando, detener la grabación
-      mediaRecorder.stop();
-      toggleButton.textContent = "Iniciar grabación";
-      isRecording = false;
-    }
-  }
-
-  // Función para enviar el audio grabado
-  function sendAudio() {
-    if (audioBlob) {
-      const formData = new FormData();
-      formData.append('audio', audioBlob, 'grabacion.wav');
-
-      // Realizar la solicitud POST para enviar el archivo
-      fetch('TU_URL_DEL_SERVIDOR_AQUI', {
-        method: 'POST',
-        body: formData,
-      })
-        .then(response => {
-          if (response.ok) {
-            alert('El audio ha sido enviado exitosamente.');
-          } else {
-            alert('Error al enviar el audio.');
-          }
-        })
-        .catch(error => {
-          console.error('Error al enviar el audio:', error);
-          alert('Error de red al intentar enviar el audio.');
-        });
-    }
-  }
-
-  // Asignar el evento al botón para alternar la grabación
-  toggleButton.addEventListener('click', toggleRecording);
-
-  // Asignar el evento al botón para enviar el audio grabado
-  sendButton.addEventListener('click', sendAudio);
-</script>
-
+  <!-- Botón para enviar el audio grabado -->
+  <button #sendButton (click)="sendAudio()" [disabled]="!isAudioAvailable">Enviar audio</button>
 </body>
-</html>

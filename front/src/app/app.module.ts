@@ -20,6 +20,8 @@ import { DesplegableComponent } from './desplegable/desplegable.component';
 import { ListeningComponent } from './listening/listening.component';
 import {Reading1Component} from "./reading1/reading1.component";
 import {Reading5Component} from "./reading5/reading5.component";
+import {Speaking1Component} from "./speaking1/speaking1.component";
+import {Writing1Component} from "./writing1/writing1.component";
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import {Reading5Component} from "./reading5/reading5.component";
     FooterComponent,
     DesplegableComponent,
     Reading5Component,
-    Reading1Component
+    Reading1Component,
+    Speaking1Component,
+    Writing1Component
   ],
   imports: [
     AppRoutingModule,

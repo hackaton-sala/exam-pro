@@ -10,6 +10,7 @@ export class RegisterComponent {
   countries = [
     { name: 'Alemania', value: 'alemania' },
     { name: 'Andorra', value: 'andorra' },
+    { name: 'Angola', value: 'angola' },
     { name: 'Argelia', value: 'argelia' },
     { name: 'Argentina', value: 'argentina' },
     { name: 'Australia', value: 'australia' },
