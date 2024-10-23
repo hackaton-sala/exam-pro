@@ -15,7 +15,7 @@ nav{
 .capa {
   position: fixed;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   z-index: -1;
   top: 0;
   left: 0;
@@ -37,7 +37,7 @@ nav{
   line-height:100px;
 }
 .container .btn-menu label{
-  color: #fff;
+  color: #000000;
   font-size: 25px;
   cursor: pointer;
 }
@@ -218,4 +218,8 @@ nav{
 
 .fas.fa-caret-down {
   margin-left: auto;
+}
+
+.dropdown-content:hover {
+  display: block;
 }
