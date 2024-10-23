@@ -43,15 +43,7 @@ export class Reading1Component implements OnInit {
   isAllSelected(): boolean {
     return this.options.every(option => option.selected !== null);
   }
-
-  checkSelection() {
-    // Este método se llama cada vez que se selecciona una opción
-  }
-
-  submitAnswers() {
-    // Lógica para manejar la respuesta del formulario
-    console.log('Respuestas enviadas:', this.options);
-  }
+  
   ngOnInit(): void {
     this.generateQuestions();
   }
