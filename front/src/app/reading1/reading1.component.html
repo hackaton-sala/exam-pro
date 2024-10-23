@@ -4,8 +4,9 @@
   <textarea id="inputText" placeholder="Pulse el botón para generar su reading" rows="10" readonly></textarea>
   <div class="grid">
     <button id="copyButton" (click)="copyText()">Copiar texto</button>
-    <button id="generateButton" (click)="generateText()">Generar nuevo texto</button>
+    <button id="generateButton" (click)="generateNewText()">Generar nuevo texto</button>
   </div>
+
   <form (ngSubmit)="submitAnswers()" #form="ngForm">
     <div class="opciones">
       <div *ngFor="let option of options; let i = index">
@@ -21,5 +22,20 @@
 
     <input type="submit" value="Enviar respuestas" class="submit" [disabled]="!isAllSelected()" id="submitBtn">
   </form>
+
+  <!-- Sección para mostrar los resultados -->
+  <div *ngIf="submitted" class="results">
+    <h2>Resultados:</h2>
+    <div *ngFor="let option of options">
+      <h4>{{ option.title }}</h4>
+      <p>Respuesta seleccionada: {{ option.selected }}</p>
+      <p *ngIf="option.selected === option.correctAnswer; else incorrect">
+        <span style="color: green;">Correcto</span>
+      </p>
+      <ng-template #incorrect>
+        <span style="color: red;">Incorrecto, la respuesta correcta es: {{ option.correctAnswer }}</span>
+      </ng-template>
+    </div>
+  </div>
 </div>
 <br>
