@@ -43,7 +43,7 @@ export class Reading1Component implements OnInit {
   isAllSelected(): boolean {
     return this.options.every(option => option.selected !== null);
   }
-  
+
   ngOnInit(): void {
     this.generateQuestions();
   }
