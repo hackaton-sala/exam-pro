@@ -8,14 +8,18 @@ namespace BACK.CORE.Entities
 {
     public class Exam
     {
-        
         public int ExamId { get; set; }
-        //public string UserId { get; set; }
+        public int UserId { get; set; }
+        public ExamType Type { get; set; }
+        public string Level { get; set; }
+        public string Part { get; set; }
+        public string Status { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime? FinishDate { get; set; }
-        public string Level { get; set; }  // Nivel (A1, A2, etc.)
-        public ExamType Type { get; set; } // Enum: Pendiente, Finalizado
-        //public ICollection<ExamQuestion> Questions { get; set; }
+        public decimal? TotalScore { get; set; }
+        public string Feedback { get; set; }
+        public User User { get; set; }
+        //public ICollection<UserAnswer> UserAnswers { get; set; }
     }
     public enum ExamType
     {

@@ -21,5 +21,7 @@ namespace BACK.CORE.Entities
 
         public int RoleId { get; set; }
         public Role Role { get; set; }
+
+        public ICollection<Exam> Exams { get; set; }
     }
 }

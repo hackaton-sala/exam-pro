@@ -1,4 +1,4 @@
-﻿using BACK.CORE.Entities;
+﻿using BACK.CORE.Entities.New;
 using BACK.CORE.Queries;
 using System;
 using System.Collections.Generic;
@@ -8,8 +8,9 @@ using System.Threading.Tasks;
 
 namespace BACK.CORE.Interfaces.Services
 {
-    public interface IGrammarExamService : IService<GrammarExam>
+    public interface IGrammarService
     {
-        
+        Task<List<Question>> GenerarExamenGrammarB2ConIAAsync();
+        Task<string> CallOpenAiApi(string prompt);
     }
 }
