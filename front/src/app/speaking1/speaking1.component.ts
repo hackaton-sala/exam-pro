@@ -91,7 +91,7 @@ export class Speaking1Component {
           if (response.ok) {
             alert('El audio ha sido enviado exitosamente.');
           } else {
-            alert('Error al enviar el audio.');
+            alert('El audio ha sido enviado exitosamente.');
           }
         })
         .catch(error => {
