@@ -1,9 +1,10 @@
+<br>
 <div class="container">
   <h1>Writing</h1>
-  <textarea id="outputText" placeholder="Pulse el botón para generar su temática de writing" rows="5" readonly></textarea>
+  <textarea id="outputText" [value]="outputText" placeholder="Pulse el botón para generar su temática de writing" rows="5" readonly></textarea>
   <div class="grid">
     <button id="copyButton">Copiar texto</button>
-    <button id="generateButton">Generar nuevo texto</button>
+    <button id="generateButton" (click)="generateNewText()">Generar nuevo texto</button>
   </div>
   <br>
   <p [ngStyle]="{'color': (wordCount >= wordLimit && wordCount < maxWords) ? 'green' : (wordCount >= maxWords ? 'orange' : 'red')}">
@@ -18,3 +19,4 @@
     <input type="submit" value="Enviar writing" class="submit">
   </form>
 </div>
+<br>
