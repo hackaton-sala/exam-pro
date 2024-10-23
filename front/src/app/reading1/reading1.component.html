@@ -1,102 +1,23 @@
-<body>
 <div class="container">
   <h1>Reading</h1>
   <textarea id="inputText" placeholder="Pulse el botón para generar su reading" rows="10" readonly></textarea>
   <div class="grid">
-    <button id="copyButton">Copiar texto</button>
-    <button id="gerateButton">Generar nuevo texto</button>
+    <button id="copyButton" (click)="copyText()">Copiar texto</button>
+    <button id="generateButton" (click)="generateText()">Generar nuevo texto</button>
   </div>
-  <form>
+  <form (ngSubmit)="submitAnswers()" #form="ngForm">
     <div class="opciones">
-      <!-- Opciones de radio buttons -->
-      <div>
-        <h3>Opción A</h3>
+      <div *ngFor="let option of options; let i = index">
+        <h3>{{ option.title }}</h3>
         <div class="radio">
-          <input type="radio" id="a" name="opcionA" value="A">
-          <label for="a">Texto 1</label>
-          <input type="radio" id="b" name="opcionA" value="B">
-          <label for="b">Texto 2</label>
-          <input type="radio" id="c" name="opcionA" value="C">
-          <label for="c">Texto 3</label>
-        </div>
-      </div>
-      <div>
-        <h3>Opción B</h3>
-        <div class="radio">
-          <input type="radio" id="a" name="opcionB" value="A">
-          <label for="a">Texto 1</label>
-          <input type="radio" id="b" name="opcionB" value="B">
-          <label for="b">Texto 2</label>
-          <input type="radio" id="c" name="opcionB" value="C">
-          <label for="c">Texto 3</label>
-        </div>
-      </div>
-      <div>
-        <h3>Opción C</h3>
-        <div class="radio">
-          <input type="radio" id="a" name="opcionC" value="A">
-          <label for="a">Texto 1</label>
-          <input type="radio" id="b" name="opcionC" value="B">
-          <label for="b">Texto 2</label>
-          <input type="radio" id="c" name="opcionC" value="C">
-          <label for="c">Texto 3</label>
-        </div>
-      </div>
-      <div>
-        <h3>Opción D</h3>
-        <div class="radio">
-          <input type="radio" id="a" name="opcionD" value="A">
-          <label for="a">Texto 1</label>
-          <input type="radio" id="b" name="opcionD" value="B">
-          <label for="b">Texto 2</label>
-          <input type="radio" id="c" name="opcionD" value="C">
-          <label for="c">Texto 3</label>
-        </div>
-      </div>
-      <div>
-        <h3>Opción E</h3>
-        <div class="radio">
-          <input type="radio" id="a" name="opcionE" value="A">
-          <label for="a">Texto 1</label>
-          <input type="radio" id="b" name="opcionE" value="B">
-          <label for="b">Texto 2</label>
-          <input type="radio" id="c" name="opcionE" value="C">
-          <label for="c">Texto 3</label>
-        </div>
-      </div>
-      <div>
-        <h3>Opción F</h3>
-        <div class="radio">
-          <input type="radio" id="a" name="opcionF" value="A">
-          <label for="a">Texto 1</label>
-          <input type="radio" id="b" name="opcionF" value="B">
-          <label for="b">Texto 2</label>
-          <input type="radio" id="c" name="opcionF" value="C">
-          <label for="c">Texto 3</label>
+          <label *ngFor="let text of option.texts">
+            <input type="radio" [name]="'opcion' + option.id" [(ngModel)]="option.selected" [value]="text.value">
+            {{ text.label }}
+          </label>
         </div>
       </div>
     </div>
 
-    <input type="submit" value="Enviar respuestas" class="submit" id="submitBtn" disabled>
+    <input type="submit" value="Enviar respuestas" class="submit" [disabled]="!isAllSelected()" id="submitBtn">
   </form>
 </div>
-
-<script>
-  // Función para verificar si todos los grupos de opciones tienen una seleccionada
-  function checkIfAllSelected() {
-    const opciones = ['opcionA', 'opcionB', 'opcionC', 'opcionD', 'opcionE', 'opcionF'];
-    return opciones.every(opcion => document.querySelector(`input[name="${opcion}"]:checked`));
-  }
-
-  // Referencia al botón de enviar
-  const submitBtn = document.getElementById('submitBtn');
-
-  // Añadir evento a los inputs de tipo radio
-  document.querySelectorAll('input[type="radio"]').forEach(radio => {
-    radio.addEventListener('change', function() {
-      // Si todas las opciones están seleccionadas, habilitar el botón
-      submitBtn.disabled = !checkIfAllSelected();
-    });
-  });
-</script>
-</body>
