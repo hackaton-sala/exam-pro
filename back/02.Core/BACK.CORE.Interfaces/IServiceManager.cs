@@ -15,7 +15,7 @@ namespace BACK.CORE.Interfaces
         IListeningQuestionService ListeningQuestionService { get; }
         IQuestionService QuestionService { get; }
 
-        IGrammarExamService GrammarExamService { get; }
+        IGrammarService GrammarService { get; }
         IExamService ExamService { get; }
         ITextService TextService { get; }
 

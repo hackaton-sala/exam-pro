@@ -25,13 +25,13 @@ namespace BACK.CORE.Services
             WritingQuestionService = new WritingQuestionService(_unitOfWork, _mapper);
             SpeakingQuestionService = new SpeakingQuestionService(_unitOfWork, _mapper);
             ListeningQuestionService = new ListeningQuestionService(_unitOfWork, _mapper);
-            GrammarExamService = new GrammarExamService(_unitOfWork, _mapper);
+            GrammarService = new GrammarService(_unitOfWork, _mapper);
             ExamService = new ExamService(_unitOfWork, _mapper);
             TextService = new TextService(_unitOfWork, _mapper);
         }
         public IUserService UserService { get; private set; }
         public IRoleService RoleService { get; private set; }
-        public IGrammarExamService GrammarExamService {  get; private set; }
+        public IGrammarService GrammarService {  get; private set; }
         public IExamQuestionService ExamQuestionService {  get; private set; }
         public IQuestionService QuestionService {  get; private set; }
         public IUseOfEnglishQuestionService UseOfEnglishQuestionService {  get; private set; }

@@ -36,12 +36,25 @@ namespace BACK.IL.Repository.EF.EntityConfigurations
 
             builder.Property(e => e.Type)
                 .IsRequired()
-                .HasMaxLength(20);
-            
-           /* builder.Property(e => e.Questions)
+                .HasMaxLength(50);
+
+            builder.Property(e => e.Part)
                 .IsRequired()
-                .HasMaxLength(200);
-            */
+                .HasMaxLength(50);
+
+            builder.Property(e => e.Status)
+                .IsRequired()
+                .HasMaxLength(20);
+
+            builder.HasOne(e => e.User)
+                  .WithMany(u => u.Exams)
+                  .HasForeignKey(e => e.UserId)
+                  .OnDelete(DeleteBehavior.Cascade);
+
+            /* builder.Property(e => e.Questions)
+                 .IsRequired()
+                 .HasMaxLength(200);
+             */
 
             // Propiedades Navegacion
         }
