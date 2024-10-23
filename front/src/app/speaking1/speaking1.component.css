@@ -1,9 +1,27 @@
 /* Estilos básicos para la página */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f4f4f4;
-  text-align: center;
+  color: #333;
+  line-height: 1.6;
   padding: 20px;
+  text-align: center;
+  height: auto;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
@@ -54,4 +72,9 @@ button:hover {
 button:disabled {
   background-color: #ddd;
   cursor: not-allowed;
+}
+
+.botones{
+  display: grid;
+  grid-template-columns: auto 40% auto 40% auto;
 }

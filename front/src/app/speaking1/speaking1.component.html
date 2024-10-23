@@ -1,25 +1,30 @@
 <body>
-  <h1>Speaking</h1>
-  <textarea id="inputText" placeholder="Pulse el botón para generar su reading" rows="10" readonly></textarea>
+  <div class="container">
+    <h1>Speaking</h1>
+    <textarea id="inputText" placeholder="Pulse el botón para generar su reading" rows="10" readonly></textarea>
 
-  <div class="grid">
-    <a></a>
-    <button (click)="copyText()">Copiar texto</button>
-    <a></a>
-    <button (click)="generateText()">Generar nuevo texto</button>
-    <a></a>
+    <div class="grid">
+      <a></a>
+      <button (click)="copyText()">Copiar texto</button>
+      <a></a>
+      <button (click)="generateText()">Generar nuevo texto</button>
+      <a></a>
+    </div>
+
+    <br>
+
+    <p>Pulsa el botón para grabar el audio y luego vuelve a pulsarlo para detener la grabación y escuchar lo grabado.</p>
+
+    <!-- Elemento de audio donde se reproducirá el sonido capturado -->
+    <audio #audioReceptor controls></audio>
+    <div class="botones">
+      <a></a>
+      <!-- Botón para iniciar o detener la grabación -->
+      <button (click)="toggleRecording()">{{ recordingButtonText }}</button>
+      <a></a>
+      <!-- Botón para enviar el audio grabado -->
+      <button #sendButton (click)="sendAudio()" [disabled]="!isAudioAvailable">Enviar audio</button>
+      <a></a>
+    </div>
   </div>
-
-  <br>
-
-  <p>Pulsa el botón para grabar el audio y luego vuelve a pulsarlo para detener la grabación y escuchar lo grabado.</p>
-
-  <!-- Elemento de audio donde se reproducirá el sonido capturado -->
-  <audio #audioReceptor controls></audio>
-
-  <!-- Botón para iniciar o detener la grabación -->
-  <button (click)="toggleRecording()">{{ recordingButtonText }}</button>
-
-  <!-- Botón para enviar el audio grabado -->
-  <button #sendButton (click)="sendAudio()" [disabled]="!isAudioAvailable">Enviar audio</button>
 </body>

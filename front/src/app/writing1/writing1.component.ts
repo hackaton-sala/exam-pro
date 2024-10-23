@@ -62,7 +62,7 @@ export class Writing1Component {
     console.log('Writing submitted:', this.writingText);
     // Aquí puedes implementar la lógica para enviar el writing, por ejemplo, a un servidor
   }
-  
+
   generateNewText(): void {
     const randomIndex = Math.floor(Math.random() * this.texts.length);
     this.outputText = this.texts[randomIndex]; // Asigna un texto aleatorio a outputText
