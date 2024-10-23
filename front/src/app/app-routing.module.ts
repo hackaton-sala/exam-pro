@@ -9,6 +9,7 @@ import {Reading1Component} from "./reading1/reading1.component";
 import {Reading5Component} from "./reading5/reading5.component";
 import {Speaking1Component} from "./speaking1/speaking1.component";
 import {Writing1Component} from "./writing1/writing1.component";
+import {InicioComponent} from "./inicio/inicio.component";
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path: 'nopagefound', component: NoPageFoundComponent},
   {path: 'speaking1', component: Speaking1Component},
   {path: 'writing1', component: Writing1Component},
+  {path: 'inicio', component: InicioComponent},
   {path: '**', component: NoPageFoundComponent},
 ]
 
