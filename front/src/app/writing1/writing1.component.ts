@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-writing1',
@@ -38,6 +39,8 @@ export class Writing1Component {
     "The Forgotten Gods: Write about ancient gods trying to reclaim their worshippers in the modern world."
   ];
 
+  constructor(public dialog: MatDialog){}
+
   countWords(text: string): number {
     return text.trim().split(/\s+/).filter((word) => word.length > 0).length;
   }
@@ -66,5 +69,31 @@ export class Writing1Component {
   generateNewText(): void {
     const randomIndex = Math.floor(Math.random() * this.texts.length);
     this.outputText = this.texts[randomIndex]; // Asigna un texto aleatorio a outputText
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
+      width: '250px',
+      data: {name: "", animal: ""}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+}
+
+@Component({
+  selector: 'dialog-writing',
+  templateUrl: 'dialog-writing.html',
+})
+export class DialogOverviewExampleDialog {
+
+  constructor(
+    public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: any) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 }
