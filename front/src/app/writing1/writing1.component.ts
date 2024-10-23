@@ -54,15 +54,19 @@ export class Writing1Component implements OnInit {
     I started playing football when I was 5 years old, so I have been playing it for 16 years. At first, my father used to take me to the training, so he allowed me to practice this sport and gives me the passion to have fun with it. \
     I enjoyed football so much because of many facts. Firstly, it makes me healthier than if I don’t do any sport, and, I also become more relaxed before I play it. Secondly, this sport is so passionate, and I love this as I feel adrenaline that gives me strength to give more to my team and play better. \
     I recommended you trying to play football, specially if you are young, because if you train hard, you will be a better player and you will enjoy the sport as I do, which would allow you to feel relaxed and have a lot of new experiences.'
+  isLoading = false;
 
   generateFeedback() {
-    const prompt = "Generate 5 grammar questions for a B2 level English exam with 4 options each.";
+    this.isLoading = true;
+
     this.writingService.generateFeedback(this.user_text).subscribe(
       (response) => {
+        this.isLoading = false;  // Ocultar el spinner
         this.openDialog(response.feedback);
         console.log(response);  // Mostrar las preguntas generadas
       },
       (error) => {
+        this.isLoading = false;  // Ocultar el spinner
         console.error('Error al generar preguntas', error);
       }
     );
@@ -102,7 +106,7 @@ export class Writing1Component implements OnInit {
 
   openDialog(feedback: string): void {
     const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
-      width: '1000px',
+      width: '1500px',
       data: {name: feedback}
     });
 

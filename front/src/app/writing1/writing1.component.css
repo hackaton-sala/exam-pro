@@ -88,3 +88,24 @@ input.submit{
   margin-left: 5%;
   transition: background-color 0.3s ease;
 }
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Oscurecer el fondo */
+  display: flex;
+  flex-direction: column; /* Alinear el texto debajo del spinner */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.loading-text {
+  margin-top: 16px; /* Separación entre el spinner y el texto */
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}

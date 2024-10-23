@@ -14,7 +14,7 @@ export class GrammarService {
   constructor(private httpClient: HttpClient) { }
 
   generateQuestions(prompt: string): Observable<any> {
-    const body = { prompt: prompt };
+    const body = { };
     return this.httpClient.post<any>(this.url, body);
   }
 }

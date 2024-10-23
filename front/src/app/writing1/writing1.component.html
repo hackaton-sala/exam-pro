@@ -20,3 +20,8 @@
   </form>
 </div>
 <br>
+
+<div *ngIf="isLoading" class="loading-overlay">
+  <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+  <p class="loading-text">Generando feedback...</p>
+</div>
