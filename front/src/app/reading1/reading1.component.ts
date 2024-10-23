@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { GrammarService } from '../services/application/gramar.service';
 
 interface Option {
   id: string;
@@ -12,7 +13,11 @@ interface Option {
   templateUrl: './reading1.component.html',
   styleUrls: ['./reading1.component.css']
 })
-export class Reading1Component {
+export class Reading1Component implements OnInit {
+
+  constructor(public grammarService: GrammarService) {
+
+  }
   options: Option[] = [
     { id: 'A', title: 'Opción A', texts: [{ label: 'Texto 1', value: 'A' }, { label: 'Texto 2', value: 'B' }, { label: 'Texto 3', value: 'C' }, { label: 'Texto 4', value: 'D' }], selected: null },
     { id: 'B', title: 'Opción B', texts: [{ label: 'Texto 1', value: 'A' }, { label: 'Texto 2', value: 'B' }, { label: 'Texto 3', value: 'C' }, { label: 'Texto 4', value: 'D' }], selected: null },
@@ -39,6 +44,29 @@ export class Reading1Component {
     return this.options.every(option => option.selected !== null);
   }
 
+  checkSelection() {
+    // Este método se llama cada vez que se selecciona una opción
+  }
+
+  submitAnswers() {
+    // Lógica para manejar la respuesta del formulario
+    console.log('Respuestas enviadas:', this.options);
+  }
+  ngOnInit(): void {
+    this.generateQuestions();
+  }
+
+  generateQuestions() {
+    const prompt = "Generate 5 grammar questions for a B2 level English exam with 4 options each.";
+    this.grammarService.generateQuestions(prompt).subscribe(
+      (response) => {
+        console.log(response);  // Mostrar las preguntas generadas
+      },
+      (error) => {
+        console.error('Error al generar preguntas', error);
+      }
+    );
+  }
   checkSelection() {
     // Este método se llama cada vez que se selecciona una opción
   }
